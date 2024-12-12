@@ -1,5 +1,6 @@
 const Historico = require("../models/historico.model.js");
 
+// Controladores CRUD
 const createHistoricos = async (req, res) => {
   try {
     const historico = await Historico.create(req.body);
@@ -61,9 +62,6 @@ const deleteHistoricos = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-
-
 
 const getHistoricosPorMatricula = async (req, res) => {
   try {

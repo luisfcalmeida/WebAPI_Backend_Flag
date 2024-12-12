@@ -1,5 +1,6 @@
 const Funcionario = require("../models/funcionario.model.js");
 
+// Controladores CRUD
 const createFuncionarios = async (req, res) => {
   try {
     const funcionario = await Funcionario.create(req.body);
