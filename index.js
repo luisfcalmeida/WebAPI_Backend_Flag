@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const Funcionario = require("./models/funcionario.model.js");
 const Historico = require("./models/historico.model.js");
@@ -21,6 +22,7 @@ mongoose.connect("mongodb+srv://luisfca:aDhd0V5dfufAQh8s@backenddb.rxpjv.mongodb
   });
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

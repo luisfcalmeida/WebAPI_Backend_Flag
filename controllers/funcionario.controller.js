@@ -1,5 +1,14 @@
 const Funcionario = require("../models/funcionario.model.js");
 
+const createFuncionarios = async (req, res) => {
+  try {
+    const funcionario = await Funcionario.create(req.body);
+    res.status(200).json(funcionario);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
 const getFuncionarios = async (req, res) => {
   try {
     const funcionarios = await Funcionario.find({});
@@ -16,15 +25,6 @@ const getFuncionariosById = async (req, res) => {
     res.status(200).json(funcionario);
   } catch (error) {
     res.status(500).json({ message: error.message });
-  }
-};
-
-const createFuncionarios = async (req, res) => {
-  try {
-    const funcionario = await Funcionario.create(req.body);
-    res.status(200).json(funcionario);
-  } catch (error) {
-    res.status(500).send(error);
   }
 };
 
