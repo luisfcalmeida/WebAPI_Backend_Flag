@@ -12,10 +12,14 @@ const { getHistoricosById } = require("../controllers/historico.controller.js");
 const { updateHistoricos } = require("../controllers/historico.controller.js");
 const { deleteHistoricos } = require("../controllers/historico.controller.js");
 const { getHistoricosPorMatricula } = require("../controllers/historico.controller.js");
+const { getHistoricosEntreDatas } = require("../controllers/historico.controller.js");
+const { getHistoricosPorMatriculaEntreDatas } = require("../controllers/historico.controller.js");
 
 // Rotas CRUD
 router.post("/", createHistoricos);
 router.get("/", getHistoricos);
+router.get("/datas", getHistoricosEntreDatas);
+router.get("/matricula/:matricula/datas", getHistoricosPorMatriculaEntreDatas);  
 router.get("/:id", getHistoricosById);
 router.put("/:id", updateHistoricos);
 router.delete("/:id", deleteHistoricos);

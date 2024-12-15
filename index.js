@@ -13,8 +13,7 @@ const funcionarioRoute = require("./routes/funcionario.route.js");
 const historicoRoute = require("./routes/historico.route.js");
 
 // Conexão à base de dados MongoDB
-mongoose
-  .connect("mongodb+srv://luisfca:aDhd0V5dfufAQh8s@backenddb.rxpjv.mongodb.net/BackendDB?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect("mongodb+srv://luisfca:aDhd0V5dfufAQh8s@backenddb.rxpjv.mongodb.net/BackendDB?retryWrites=true&w=majority&appName=BackendDB")
   .then(() => {
     console.log("Connected to database...");
 
